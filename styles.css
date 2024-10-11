@@ -1,0 +1,134 @@
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+ * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     font-family: 'Poppins', sans-serif;
+ }
+
+ body {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     min-height: 100vh;
+     background-color: #222;
+     color: #fff;
+     font-size: 16px;
+     /* Base font size */
+ }
+
+ .container {
+     display: flex;
+     gap: 50px;
+ }
+
+ .container .box {
+     position: relative;
+     width: 300px;
+     height: 400px;
+     border: 2px solid #666;
+     border-radius: 20px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     cursor: default;
+     padding: 30px;
+     overflow: hidden;
+     transition: border-color 0.3s ease;
+     font-size: 1em;
+     /* Inherits from body font size */
+
+ }
+
+ .container .box:hover {
+     border-color: #ff5722;
+ }
+
+ .box span {
+     position: absolute;
+     display: block;
+     width: 0;
+     height: 0;
+     border-radius: 50%;
+     background-color: #ff5945;
+     transition: width 0.2s ease, height 0.2s ease;
+     transform: translate(-50%, -50%);
+     mix-blend-mode: difference;
+ }
+
+ .box:hover span {
+     width: 300px;
+     height: 300px;
+ }
+
+ /* Large Screens (Desktops) */
+
+ @media (min-width: 1024px) {
+     body {
+         font-size: 18px;
+         /* Slightly larger font for desktop */
+
+     }
+
+     .container {
+         gap: 50px;
+     }
+
+     .container .box {
+         width: 300px;
+         height: 400px;
+     }
+
+     .box:hover span {
+         width: 300px;
+         height: 300px;
+     }
+ }
+
+ /* Medium Screens (Tablets) */
+ @media (min-width: 768px) and (max-width: 1023px) {
+     body {
+         font-size: 16px;
+         /* Base font size for tablets */
+     }
+
+     .container {
+         gap: 30px;
+         flex-direction: column;
+     }
+
+     .container .box {
+         width: 250px;
+         height: 350px;
+     }
+
+     .box:hover span {
+         width: 250px;
+         height: 250px;
+     }
+ }
+
+ /* Small Screens (Mobiles) */
+ @media (max-width: 767px) {
+     body {
+         font-size: 14px;
+         /* Smaller font for mobile */
+     }
+
+     .container {
+         gap: 20px;
+         flex-direction: column;
+     }
+
+     .container .box {
+         width: 200px;
+         height: 300px;
+         padding: 20px;
+     }
+
+     .box:hover span {
+         width: 200px;
+         height: 200px;
+     }
+ }
